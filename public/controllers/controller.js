@@ -1,9 +1,10 @@
-var myApp=angular.module('myApp',[]);
-myApp.controller('LunchController', LunchController)
+var myApp = angular.module('myApp',[]);
 
-LunchController.$inject = ['$scope'];
-function LunchController ($scope){
-	console.log("Hello World from LunchController");
-	$scope.lunchMenu = "list comma separated dishes you usually have for lunch"
+myApp.controller('LunchController', ['$scope', function ($scope){
+		console.log("Hello World from LunchController");
+		$scope.lunchMenu = "list comma separated dishes you usually have for lunch"
+		$scope.message = "How much was that you filthy pig?";
 
-	}
+	}])
+
+
