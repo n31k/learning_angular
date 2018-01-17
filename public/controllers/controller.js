@@ -22,7 +22,18 @@ myApp.controller('LunchController', ['$scope', function ($scope){
 					} 
 		
 		};
-
+	$scope.myStyle = function(){
+		if ($scope.message == 'Enjoy!'){
+			return {
+				"color" : "green"			
+			};
+		}
+		if ($scope.message == 'Too much!'){
+			return {
+				"color" : "red"
+			};
+		}
+	};
 		}])
 
 
