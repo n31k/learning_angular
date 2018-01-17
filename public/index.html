@@ -10,12 +10,23 @@
 <body>
    <div class="container" ng-controller="LunchController">
      <h1>Lunch Checker</h1>
+	 <table>
+		 <tr>
+			 <td>
 
          <input id="lunch-menu" type="text" class="form-control" ng-model="lunchMenu">
+			 </td>
+			 <td>
 		 <button class="btn btn-primary" ng-click="checkLunch()">Check if too much</button>
-		 {{lunchMenu}}
-		 <br>
+			 </td>
+		 </tr>
+		 <tr>
+			 <td>
 		 {{message}}
+		    </td>
+			<td></td>
+		 </tr>
+	 </table>
    </div>
 <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.6/angular.min.js"></script>
 <script src="controllers/controller.js"></script>
