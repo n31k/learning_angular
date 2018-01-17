@@ -14,7 +14,7 @@ myApp.controller('LunchController', ['$scope', function ($scope){
 			if (len == 0){
 			  $scope.message = 'Enter some items first!';
 			}
-			if (len < 3){
+			if (len > 0 && len <= 3){
 			  $scope.message = 'Enjoy!';
 			}
 			if (len > 3){
