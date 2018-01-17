@@ -7,7 +7,16 @@ myApp.controller('LunchController', ['$scope', function ($scope){
 			var re = /\s?,+\s?/;
 			var new_string = $scope.lunchMenu.split(re);
 			console.log(new_string);
-			$scope.message = new_string;
+			var len = new_string.length;
+			if (new_string[0] != '' && len < 3){
+			  $scope.message = 'Enjoy!';
+			}
+			if (new_string[0] != '' && len > 3){
+			  $scope.message = 'Too much!';
+					} 
+			if (new_string[0] == ''){
+			  $scope.message = 'Enter some foodstuffs!';
+					} 
 
 		}, true);
 
