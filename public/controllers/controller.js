@@ -4,13 +4,16 @@ myApp.controller('LunchController', ['$scope', function ($scope){
 		console.log("Hello World from LunchController");
 	    $scope.lunchMenu = '';
 	    $scope.message = 'Enter some items!';
-		$scope.$watch('lunchMenu', function() {
+		$scope.checkLunch = function() {
 			console.log('form model has been changed');
 			var re = /\s?,+\s?/;
 			var new_string = $scope.lunchMenu.split(re);
 			new_string = new_string.filter(function(word) word != '');
 			var len = new_string.length;
 			console.log(new_string);
+			if (len == 0){
+			  $scope.message = 'Enter some items first!';
+			}
 			if (len < 3){
 			  $scope.message = 'Enjoy!';
 			}
@@ -18,7 +21,7 @@ myApp.controller('LunchController', ['$scope', function ($scope){
 			  $scope.message = 'Too much!';
 					} 
 		
-		}, true);
+		};
 
 		}])
 
